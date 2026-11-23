@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cari Anggota &amp; Dosen — KolaboraCampus</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#konten-utama" class="skip-link">Lewati ke konten utama</a>
+
+  <!-- HEADER & NAVIGASI (Pill aktif tetap di Jelajah Tim sesuai App.jsx) -->
+  <div class="site-header-wrapper">
+    <header class="site-header">
+      <a href="index.html" class="header-logo">
+        <img src="assets/image/Logo.png" alt="KolaboraCampus">
+      </a>
+
+      <nav aria-label="Navigasi utama" class="desktop-nav">
+        <a href="index.html" class="nav-link">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/>
+            <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          </svg>
+          <span>Beranda</span>
+        </a>
+
+        <a href="jelajah-tim.html" class="nav-link is-active" aria-current="page">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.3-4.3"/>
+          </svg>
+          <span>Jelajah Tim</span>
+        </a>
+
+        <a href="tim-saya.html" class="nav-link">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="18" height="18" x="3" y="3" rx="2"/>
+            <path d="M9 3v18"/>
+          </svg>
+          <span>Tim Saya</span>
+        </a>
+
+        <a href="dosen.html" class="nav-link">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/>
+            <path d="M22 10v6"/>
+            <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>
+          </svg>
+          <span>Dosen</span>
+        </a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" id="notprof-btn" class="notprof-btn" aria-label="Notifikasi dan Profil">
+          <img src="assets/image/NotProf.png" alt="Notifikasi dan Profil">
+        </button>
+
+        <button
+          type="button"
+          id="mobile-menu-toggle"
+          class="mobile-menu-toggle"
+          aria-label="Buka menu"
+          aria-expanded="false"
+          aria-controls="mobile-nav-drawer"
+        >
+          <svg class="icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="4" x2="20" y1="12" y2="12"/>
+            <line x1="4" x2="20" y1="6" y2="6"/>
+            <line x1="4" x2="20" y1="18" y2="18"/>
+          </svg>
+          <svg class="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 6 6 18"/>
+            <path d="m6 6 12 12"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+      <nav aria-label="Navigasi mobile" class="mobile-nav">
+        <a href="index.html" class="nav-link">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/>
+            <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          </svg>
+          <span>Beranda</span>
+        </a>
+        <a href="jelajah-tim.html" class="nav-link is-active" aria-current="page">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.3-4.3"/>
+          </svg>
+          <span>Jelajah Tim</span>
+        </a>
+        <a href="tim-saya.html" class="nav-link">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="18" height="18" x="3" y="3" rx="2"/>
+            <path d="M9 3v18"/>
+          </svg>
+          <span>Tim Saya</span>
+        </a>
+        <a href="dosen.html" class="nav-link">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/>
+            <path d="M22 10v6"/>
+            <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>
+          </svg>
+          <span>Dosen</span>
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- KONTEN UTAMA CARI ANGGOTA -->
+  <main id="konten-utama" class="page-main" tabindex="-1">
+    <!-- 1. Banner Pencarian -->
+    <section class="banner-section" aria-label="Pencarian kandidat">
+      <div class="container">
+        <div class="search-banner">
+          <h1 class="search-banner-title">Temukan rekan terbaik</h1>
+
+          <form id="kandidat-search-form" class="search-banner-form" role="search">
+            <label for="kandidat-search-input" class="sr-only">Cari nama atau keahlian</label>
+            <svg class="search-banner-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="m21 21-4.3-4.3"/>
+            </svg>
+            <input
+              type="search"
+              id="kandidat-search-input"
+              class="search-banner-input"
+              placeholder="Cari nama atau keahlian..."
+              autocomplete="off"
+            >
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Tab Pemindah Mode -->
+    <section class="banner-section" aria-label="Mode pencarian">
+      <div class="container">
+        <nav class="mode-switch-bar" aria-label="Pilih mode pencarian">
+          <a href="jelajah-tim.html" class="mode-tab">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            <span>Cari tim untuk bergabung</span>
+          </a>
+
+          <a href="cari-anggota.html" class="mode-tab is-active" aria-current="page">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="m21 21-4.3-4.3"/>
+            </svg>
+            <span>Cari anggota atau dosen</span>
+          </a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- 3. Kotak Filter Dropdown -->
+    <section class="banner-section" aria-label="Filter kandidat">
+      <div class="container">
+        <div class="filter-card">
+          <div class="filter-grid">
+            <div class="form-field">
+              <label for="filter-keahlian-kandidat" class="filter-label">Keahlian yang dibutuhkan</label>
+              <div class="select-wrapper">
+                <select id="filter-keahlian-kandidat" class="form-control form-select">
+                  <option value="Semua Keahlian">Semua Keahlian</option>
+                  <option value="Internet of Things">Internet of Things</option>
+                  <option value="Smart City">Smart City</option>
+                  <option value="Data Science">Data Science</option>
+                  <option value="Product Strategy">Product Strategy</option>
+                  <option value="Business Model">Business Model</option>
+                  <option value="Research">Research</option>
+                  <option value="Figma">Figma</option>
+                  <option value="UX Research">UX Research</option>
+                  <option value="Prototyping">Prototyping</option>
+                  <option value="React">React</option>
+                  <option value="TypeScript">TypeScript</option>
+                  <option value="Tailwind">Tailwind</option>
+                  <option value="Pitching">Pitching</option>
+                  <option value="BMC">BMC</option>
+                  <option value="Market Research">Market Research</option>
+                </select>
+                <svg class="select-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m6 9 6 6 6-6"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="filter-kompetisi-kandidat" class="filter-label">Kompetisi</label>
+              <div class="select-wrapper">
+                <select id="filter-kompetisi-kandidat" class="form-control form-select">
+                  <option value="Semua Lomba">Semua Lomba</option>
+                  <option value="GEMASTIK XVII">GEMASTIK XVII</option>
+                  <option value="L'Oréal Brandstorm">L'Oréal Brandstorm</option>
+                  <option value="Kreasi UI/UX Nasional">Kreasi UI/UX Nasional</option>
+                </select>
+                <svg class="select-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m6 9 6 6 6-6"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <p id="kandidat-filter-status" class="sr-only" role="status" aria-live="polite"></p>
+
+    <!-- 4. Section Dosen Pembimbing -->
+    <section class="content-section" aria-labelledby="judul-dosen-sesuai">
+      <div class="container">
+        <div class="section-header-row-responsive">
+          <div>
+            <h2 id="judul-dosen-sesuai" class="section-title">Dosen pembimbing yang sesuai</h2>
+            <p class="section-subtitle">Profil dosen juga dapat ditemukan berdasarkan bidang kompetisi timmu.</p>
+          </div>
+
+          <span class="section-pill-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/>
+              <path d="M22 10v6"/>
+            </svg>
+            <span>Dosen</span>
+          </span>
+        </div>
+
+        <div id="dosen-list" class="kandidat-list">
+          <!-- Dosen 1 -->
+          <article
+            class="kandidat-card"
+            data-group="dosen"
+            data-skills="Internet of Things|Smart City|Data Science"
+            data-competitions="GEMASTIK XVII"
+            data-keywords="dr budi santoso smart city iot teknik informatika internet of things data science"
+          >
+            <div class="kandidat-left">
+              <div class="kandidat-avatar avatar-pink" aria-hidden="true">BS</div>
+              <div class="kandidat-info-block">
+                <div class="kandidat-name-row">
+                  <h3 class="kandidat-name">Dr. Budi Santoso</h3>
+                  <span class="match-badge">96% sesuai</span>
+                </div>
+                <p class="kandidat-role">Dosen · Smart City &amp; IoT</p>
+                <p class="kandidat-info">Teknik Informatika</p>
+                <div class="skill-tags">
+                  <span class="skill-tag">Internet of Things</span>
+                  <span class="skill-tag">Smart City</span>
+                  <span class="skill-tag">Data Science</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="kandidat-actions">
+              <button type="button" class="btn btn-outline" data-kandidat-profile="Dr. Budi Santoso (Teknik Informatika)">Lihat profil</button>
+              <button type="button" class="btn btn-primary" data-kandidat-action data-target-name="Dr. Budi Santoso" data-submitted-text="✓ Pengajuan terkirim">Ajukan pembimbing</button>
+            </div>
+          </article>
+
+          <!-- Dosen 2 -->
+          <article
+            class="kandidat-card"
+            data-group="dosen"
+            data-skills="Product Strategy|Business Model|Research"
+            data-competitions="L'Oréal Brandstorm|Kreasi UI/UX Nasional"
+            data-keywords="dr maya anggraini product business sistem informasi product strategy business model research"
+          >
+            <div class="kandidat-left">
+              <div class="kandidat-avatar avatar-gray" aria-hidden="true">MA</div>
+              <div class="kandidat-info-block">
+                <div class="kandidat-name-row">
+                  <h3 class="kandidat-name">Dr. Maya Anggraini</h3>
+                  <span class="match-badge">92% sesuai</span>
+                </div>
+                <p class="kandidat-role">Dosen · Product &amp; Business</p>
+                <p class="kandidat-info">Sistem Informasi</p>
+                <div class="skill-tags">
+                  <span class="skill-tag">Product Strategy</span>
+                  <span class="skill-tag">Business Model</span>
+                  <span class="skill-tag">Research</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="kandidat-actions">
+              <button type="button" class="btn btn-outline" data-kandidat-profile="Dr. Maya Anggraini (Sistem Informasi)">Lihat profil</button>
+              <button type="button" class="btn btn-primary" data-kandidat-action data-target-name="Dr. Maya Anggraini" data-submitted-text="✓ Pengajuan terkirim">Ajukan pembimbing</button>
+            </div>
+          </article>
+        </div>
+
+        <div id="dosen-empty-state" class="empty-box is-hidden">
+          Tidak ada dosen pembimbing yang cocok dengan filtermu.
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Section Mahasiswa Paling Sesuai -->
+    <section class="content-section" aria-labelledby="judul-mahasiswa-sesuai">
+      <div class="container">
+        <div class="section-header-row-responsive">
+          <div>
+            <h2 id="judul-mahasiswa-sesuai" class="section-title">Mahasiswa paling sesuai</h2>
+            <p class="section-subtitle">24 kandidat tersedia untuk timmu</p>
+          </div>
+
+          <span class="section-pill-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+            </svg>
+            <span>Mahasiswa</span>
+          </span>
+        </div>
+
+        <div id="mahasiswa-list" class="kandidat-list">
+          <!-- Mahasiswa 1 -->
+          <article
+            class="kandidat-card"
+            data-group="mahasiswa"
+            data-skills="Figma|UX Research|Prototyping"
+            data-competitions="Kreasi UI/UX Nasional|GEMASTIK XVII"
+            data-keywords="nadia putri ui/ux designer sistem informasi 2022 figma ux research prototyping"
+          >
+            <div class="kandidat-left">
+              <div class="kandidat-avatar avatar-amber" aria-hidden="true">NP</div>
+              <div class="kandidat-info-block">
+                <div class="kandidat-name-row">
+                  <h3 class="kandidat-name">Nadia Putri</h3>
+                  <span class="match-badge">95% Match</span>
+                </div>
+                <p class="kandidat-role">UI/UX Designer</p>
+                <p class="kandidat-info">Sistem Informasi 2022</p>
+                <div class="skill-tags">
+                  <span class="skill-tag">Figma</span>
+                  <span class="skill-tag">UX Research</span>
+                  <span class="skill-tag">Prototyping</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="kandidat-actions">
+              <button type="button" class="btn btn-outline" data-kandidat-profile="Nadia Putri (Sistem Informasi 2022)">Lihat profil</button>
+              <button type="button" class="btn btn-primary" data-kandidat-action data-target-name="Nadia Putri" data-submitted-text="✓ Undangan terkirim">Kirim Undangan</button>
+            </div>
+          </article>
+
+          <!-- Mahasiswa 2 -->
+          <article
+            class="kandidat-card"
+            data-group="mahasiswa"
+            data-skills="React|TypeScript|Tailwind"
+            data-competitions="GEMASTIK XVII|Kreasi UI/UX Nasional"
+            data-keywords="raka mahendra frontend developer informatika 2021 react typescript tailwind"
+          >
+            <div class="kandidat-left">
+              <div class="kandidat-avatar avatar-pink" aria-hidden="true">RM</div>
+              <div class="kandidat-info-block">
+                <div class="kandidat-name-row">
+                  <h3 class="kandidat-name">Raka Mahendra</h3>
+                  <span class="match-badge">91% Match</span>
+                </div>
+                <p class="kandidat-role">Frontend Developer</p>
+                <p class="kandidat-info">Informatika 2021</p>
+                <div class="skill-tags">
+                  <span class="skill-tag">React</span>
+                  <span class="skill-tag">TypeScript</span>
+                  <span class="skill-tag">Tailwind</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="kandidat-actions">
+              <button type="button" class="btn btn-outline" data-kandidat-profile="Raka Mahendra (Informatika 2021)">Lihat profil</button>
+              <button type="button" class="btn btn-primary" data-kandidat-action data-target-name="Raka Mahendra" data-submitted-text="✓ Undangan terkirim">Kirim Undangan</button>
+            </div>
+          </article>
+
+          <!-- Mahasiswa 3 -->
+          <article
+            class="kandidat-card"
+            data-group="mahasiswa"
+            data-skills="Pitching|BMC|Market Research"
+            data-competitions="L'Oréal Brandstorm"
+            data-keywords="sarah azzahra business strategist manajemen 2022 pitching bmc market research"
+          >
+            <div class="kandidat-left">
+              <div class="kandidat-avatar avatar-gray" aria-hidden="true">SA</div>
+              <div class="kandidat-info-block">
+                <div class="kandidat-name-row">
+                  <h3 class="kandidat-name">Sarah Azzahra</h3>
+                  <span class="match-badge">88% Match</span>
+                </div>
+                <p class="kandidat-role">Business Strategist</p>
+                <p class="kandidat-info">Manajemen 2022</p>
+                <div class="skill-tags">
+                  <span class="skill-tag">Pitching</span>
+                  <span class="skill-tag">BMC</span>
+                  <span class="skill-tag">Market Research</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="kandidat-actions">
+              <button type="button" class="btn btn-outline" data-kandidat-profile="Sarah Azzahra (Manajemen 2022)">Lihat profil</button>
+              <button type="button" class="btn btn-primary" data-kandidat-action data-target-name="Sarah Azzahra" data-submitted-text="✓ Undangan terkirim">Kirim Undangan</button>
+            </div>
+          </article>
+        </div>
+
+        <div id="mahasiswa-empty-state" class="empty-box is-hidden">
+          Tidak ada mahasiswa yang cocok dengan filtermu.
+        </div>
+
+        <div class="section-bottom-action">
+          <button type="button" class="btn-buat-tim" data-open-buat-tim>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14"/>
+              <path d="M12 5v14"/>
+            </svg>
+            <span>Buat Tim</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <div class="site-footer-wrapper">
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="assets/image/Logo.png" alt="KolaboraCampus">
+        <p class="footer-tagline">Kolaborasi cerdas untuk prestasi yang lebih besar.</p>
+      </div>
+      <p class="footer-sso">Terhubung melalui SSO Universitas Brawijaya</p>
+    </footer>
+  </div>
+
+  <!-- DIALOG BUAT TIM BARU -->
+  <div id="buat-tim-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="buat-tim-title">
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn modal-close-floating" data-close-modal aria-label="Tutup dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 6 6 18"/>
+          <path d="m6 6 12 12"/>
+        </svg>
+      </button>
+
+      <div class="modal-icon-badge" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      </div>
+
+      <h2 id="buat-tim-title" class="modal-title">Buat tim baru</h2>
+      <p class="modal-subtitle">
+        Lengkapi identitas tim dan kebutuhan anggota. Tim akan langsung muncul di &ldquo;Tim Saya&rdquo;.
+      </p>
+
+      <form id="buat-tim-form" class="modal-form">
+        <div class="form-field">
+          <label for="nama-tim" class="form-label">Nama tim</label>
+          <input id="nama-tim" name="nama_tim" type="text" required placeholder="Contoh: Tim Aurora" class="form-control">
+        </div>
+
+        <div class="form-field">
+          <label for="lomba-diikuti" class="form-label">Lomba yang diikuti</label>
+          <div class="select-wrapper">
+            <select id="lomba-diikuti" name="lomba" class="form-control form-select">
+              <option value="GEMASTIK XVII">GEMASTIK XVII</option>
+              <option value="L'Oréal Brandstorm">L'Oréal Brandstorm</option>
+              <option value="Kreasi UI/UX Nasional">Kreasi UI/UX Nasional</option>
+            </select>
+            <svg class="select-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <p class="form-label">Posisi yang dibutuhkan</p>
+          <div class="position-cols-head">
+            <span class="position-col-name">Nama Posisi</span>
+            <span class="position-col-qty">Jumlah</span>
+          </div>
+
+          <div id="positions-list" class="positions-list">
+            <div class="position-row">
+              <input type="text" name="posisi_nama[]" required placeholder="Contoh: Backend Developer" aria-label="Nama posisi" class="form-control position-input-name">
+              <input type="number" name="posisi_jumlah[]" min="1" max="10" value="1" aria-label="Jumlah posisi" class="form-control position-input-qty">
+            </div>
+          </div>
+
+          <button type="button" id="btn-add-position" class="btn-add-position">+ Tambah posisi</button>
+        </div>
+
+        <div class="form-field">
+          <label for="pembuka-tim" class="form-label">Siapa yang membuka tim?</label>
+          <div class="select-wrapper">
+            <select id="pembuka-tim" name="pembuka_tim" class="form-control form-select">
+              <option value="Saya sebagai mahasiswa">Saya sebagai mahasiswa</option>
+              <option value="Saya sebagai dosen">Saya sebagai dosen</option>
+            </select>
+            <svg class="select-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </div>
+        </div>
+
+        <fieldset class="form-fieldset">
+          <legend class="form-label">Kondisi dosen pembimbing</legend>
+
+          <div class="radio-card-grid">
+            <label class="radio-card" for="dosen-sudah">
+              <input type="radio" id="dosen-sudah" name="kondisi_dosen" value="sudah" class="sr-only">
+              <span class="radio-dot" aria-hidden="true"></span>
+              <span>Sudah ada</span>
+            </label>
+
+            <label class="radio-card is-selected" for="dosen-belum">
+              <input type="radio" id="dosen-belum" name="kondisi_dosen" value="belum" checked class="sr-only">
+              <span class="radio-dot" aria-hidden="true"></span>
+              <span>Belum ada</span>
+            </label>
+          </div>
+
+          <p id="kondisi-dosen-hint" class="form-hint">
+            Tim akan ditandai &ldquo;Mencari dosen pembimbing&rdquo;.
+          </p>
+        </fieldset>
+
+        <hr class="modal-divider">
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" data-close-modal>Batal</button>
+          <button type="submit" class="btn btn-primary">+ Buat tim &amp; buka workspace</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Status Global -->
+  <div id="status-toast" class="status-toast" role="status" aria-live="polite" aria-atomic="true">
+    <div>
+      <p id="status-toast-title" class="status-toast-title"></p>
+      <p id="status-toast-message" class="status-toast-message"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jelajah Tim — KolaboraCampus</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#konten-utama" class="skip-link">Lewati ke konten utama</a>
+
+  <!-- HEADER & NAVIGASI (Aktif: Jelajah Tim) -->
+  <div class="site-header-wrapper">
+    <header class="site-header">
+      <a href="index.html" class="header-logo">
+        <img src="assets/image/Logo.png" alt="KolaboraCampus">
+      </a>
+
+      <nav aria-label="Navigasi utama" class="desktop-nav">
+        <a href="index.html" class="nav-link">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/>
+            <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          </svg>
+          <span>Beranda</span>
+        </a>
+
+        <a href="jelajah-tim.html" class="nav-link is-active" aria-current="page">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.3-4.3"/>
+          </svg>
+          <span>Jelajah Tim</span>
+        </a>
+
+        <a href="tim-saya.html" class="nav-link">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="18" height="18" x="3" y="3" rx="2"/>
+            <path d="M9 3v18"/>
+          </svg>
+          <span>Tim Saya</span>
+        </a>
+
+        <a href="dosen.html" class="nav-link">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/>
+            <path d="M22 10v6"/>
+            <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>
+          </svg>
+          <span>Dosen</span>
+        </a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" id="notprof-btn" class="notprof-btn" aria-label="Notifikasi dan Profil">
+          <img src="assets/image/NotProf.png" alt="Notifikasi dan Profil">
+        </button>
+
+        <button
+          type="button"
+          id="mobile-menu-toggle"
+          class="mobile-menu-toggle"
+          aria-label="Buka menu"
+          aria-expanded="false"
+          aria-controls="mobile-nav-drawer"
+        >
+          <svg class="icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="4" x2="20" y1="12" y2="12"/>
+            <line x1="4" x2="20" y1="6" y2="6"/>
+            <line x1="4" x2="20" y1="18" y2="18"/>
+          </svg>
+          <svg class="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 6 6 18"/>
+            <path d="m6 6 12 12"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+      <nav aria-label="Navigasi mobile" class="mobile-nav">
+        <a href="index.html" class="nav-link">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/>
+            <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          </svg>
+          <span>Beranda</span>
+        </a>
+        <a href="jelajah-tim.html" class="nav-link is-active" aria-current="page">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.3-4.3"/>
+          </svg>
+          <span>Jelajah Tim</span>
+        </a>
+        <a href="tim-saya.html" class="nav-link">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="18" height="18" x="3" y="3" rx="2"/>
+            <path d="M9 3v18"/>
+          </svg>
+          <span>Tim Saya</span>
+        </a>
+        <a href="dosen.html" class="nav-link">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/>
+            <path d="M22 10v6"/>
+            <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>
+          </svg>
+          <span>Dosen</span>
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- KONTEN UTAMA JELAJAH TIM -->
+  <main id="konten-utama" class="page-main" tabindex="-1">
+    <!-- 1. Banner Pencarian -->
+    <section class="banner-section" aria-label="Pencarian tim terbuka">
+      <div class="container">
+        <div class="search-banner">
+          <h1 class="search-banner-title">Jelajah tim terbuka</h1>
+
+          <form id="jelajah-search-form" class="search-banner-form" role="search">
+            <label for="jelajah-search-input" class="sr-only">Cari tim, pembuka, atau posisi</label>
+            <svg class="search-banner-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="m21 21-4.3-4.3"/>
+            </svg>
+            <input
+              type="search"
+              id="jelajah-search-input"
+              class="search-banner-input"
+              placeholder="Cari tim, pembuka, atau posisi..."
+              autocomplete="off"
+            >
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Tab Pemindah Mode -->
+    <section class="banner-section" aria-label="Mode pencarian">
+      <div class="container">
+        <nav class="mode-switch-bar" aria-label="Pilih mode pencarian">
+          <a href="jelajah-tim.html" class="mode-tab is-active" aria-current="page">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            <span>Cari tim untuk bergabung</span>
+          </a>
+
+          <a href="cari-anggota.html" class="mode-tab">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="m21 21-4.3-4.3"/>
+            </svg>
+            <span>Cari anggota atau dosen</span>
+          </a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- 3. Kotak Filter Dropdown -->
+    <section class="banner-section" aria-label="Filter tim">
+      <div class="container">
+        <div class="filter-card">
+          <div class="filter-grid">
+            <div class="form-field">
+              <label for="filter-keahlian" class="filter-label">Posisi yang kamu minati</label>
+              <div class="select-wrapper">
+                <select id="filter-keahlian" class="form-control form-select">
+                  <option value="Semua Keahlian">Semua Keahlian</option>
+                  <option value="Frontend Developer">Frontend Developer</option>
+                  <option value="Data Analyst">Data Analyst</option>
+                  <option value="Business Strategist">Business Strategist</option>
+                  <option value="Pitch Designer">Pitch Designer</option>
+                  <option value="UX Researcher">UX Researcher</option>
+                </select>
+                <svg class="select-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m6 9 6 6 6-6"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="filter-kompetisi" class="filter-label">Kompetisi</label>
+              <div class="select-wrapper">
+                <select id="filter-kompetisi" class="form-control form-select">
+                  <option value="Semua Lomba">Semua Lomba</option>
+                  <option value="GEMASTIK XVII">GEMASTIK XVII</option>
+                  <option value="L'Oréal Brandstorm">L'Oréal Brandstorm</option>
+                  <option value="Kreasi UI/UX Nasional">Kreasi UI/UX Nasional</option>
+                </select>
+                <svg class="select-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m6 9 6 6 6-6"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Daftar Kartu Tim -->
+    <section class="content-section" aria-labelledby="judul-tim-terbuka">
+      <div class="container">
+        <div class="section-header-row-responsive">
+          <div>
+            <h2 id="judul-tim-terbuka" class="section-title">Tim yang sedang membuka posisi</h2>
+            <p class="section-subtitle">Diurutkan berdasarkan kecocokan keahlianmu.</p>
+          </div>
+
+          <span class="rekomendasi-label">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/>
+            </svg>
+            <span>Rekomendasi untukmu</span>
+          </span>
+        </div>
+
+        <p id="tim-filter-status" class="sr-only" role="status" aria-live="polite"></p>
+
+        <div id="tim-grid" class="tim-grid">
+          <!-- Kartu Tim 1: NusaVerse -->
+          <article
+            class="tim-card variant-teal"
+            data-tim-id="1"
+            data-competition="GEMASTIK XVII"
+            data-skills="Frontend Developer|Data Analyst"
+            data-keywords="nusaverse rizky maulana gemastik xvii frontend developer data analyst"
+          >
+            <div class="tim-card-accent"></div>
+            <div class="tim-card-body">
+              <div>
+                <div class="lomba-card-top">
+                  <div class="lomba-icon-circle" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                      <circle cx="9" cy="7" r="4"/>
+                      <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                  </div>
+                  <span class="lomba-badge">GEMASTIK XVII</span>
+                </div>
+
+                <div class="lomba-heading">
+                  <h3 class="lomba-title">NusaVerse</h3>
+                  <p class="tim-creator">Dibuka oleh <strong>Rizky Maulana</strong> · Mahasiswa</p>
+                </div>
+
+                <hr class="card-divider">
+
+                <div class="tim-advisor is-confirmed">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                  <span>Pembimbing: Dr. Budi Santoso</span>
+                </div>
+
+                <hr class="card-divider">
+
+                <div class="tim-member-row">
+                  <span class="lomba-stat-label">Anggota Saat Ini</span>
+                  <span class="tim-member-count">3/5 anggota</span>
+                </div>
+
+                <hr class="card-divider">
+
+                <div>
+                  <p class="lomba-stat-label">Posisi Dibutuhkan</p>
+                  <ul class="tim-pos-list">
+                    <li class="tim-pos-item">
+                      <span class="tim-pos-role">Frontend Developer</span>
+                      <span class="tim-pos-qty">1 orang</span>
+                    </li>
+                    <li class="tim-pos-item">
+                      <span class="tim-pos-role">Data Analyst</span>
+                      <span class="tim-pos-qty">1 orang</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="tim-card-footer">
+                <hr class="card-divider">
+                <button type="button" class="lomba-btn-primary" data-open-tim-detail="1">
+                  <span>Lihat tim</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14"/>
+                    <path d="m12 5 7 7-7 7"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Kartu Tim 2: EcoMinds Lab -->
+          <article
+            class="tim-card variant-amber"
+            data-tim-id="2"
+            data-competition="L'Oréal Brandstorm"
+            data-skills="Business Strategist|Pitch Designer"
+            data-keywords="ecominds lab dr maya anggraini l'oreal loreal brandstorm business strategist pitch designer"
+          >
+            <div class="tim-card-accent"></div>
+            <div class="tim-card-body">
+              <div>
+                <div class="lomba-card-top">
+                  <div class="lomba-icon-circle is-tim-amber" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                      <circle cx="9" cy="7" r="4"/>
+                      <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                  </div>
+                  <span class="lomba-badge">L'Oréal Brandstorm</span>
+                </div>
+
+                <div class="lomba-heading">
+                  <h3 class="lomba-title">EcoMinds Lab</h3>
+                  <p class="tim-creator">Dibuka oleh <strong>Dr. Maya Anggraini</strong> · Dosen</p>
+                </div>
+
+                <hr class="card-divider">
+
+                <div class="tim-advisor is-confirmed">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                  <span>Pembimbing: Dr. Maya Anggraini</span>
+                </div>
+
+                <hr class="card-divider">
+
+                <div class="tim-member-row">
+                  <span class="lomba-stat-label">Anggota Saat Ini</span>
+                  <span class="tim-member-count">2/4 anggota</span>
+                </div>
+
+                <hr class="card-divider">
+
+                <div>
+                  <p class="lomba-stat-label">Posisi Dibutuhkan</p>
+                  <ul class="tim-pos-list">
+                    <li class="tim-pos-item">
+                      <span class="tim-pos-role">Business Strategist</span>
+                      <span class="tim-pos-qty">1 orang</span>
+                    </li>
+                    <li class="tim-pos-item">
+                      <span class="tim-pos-role">Pitch Designer</span>
+                      <span class="tim-pos-qty">1 orang</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="tim-card-footer">
+                <hr class="card-divider">
+                <button type="button" class="lomba-btn-primary" data-open-tim-detail="2">
+                  <span>Lihat tim</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14"/>
+                    <path d="m12 5 7 7-7 7"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Kartu Tim 3: Ruang Reka -->
+          <article
+            class="tim-card variant-purple"
+            data-tim-id="3"
+            data-competition="Kreasi UI/UX Nasional"
+            data-skills="UX Researcher"
+            data-keywords="ruang reka nabila vina kreasi ui/ux ui ux nasional ux researcher"
+          >
+            <div class="tim-card-accent"></div>
+            <div class="tim-card-body">
+              <div>
+                <div class="lomba-card-top">
+                  <div class="lomba-icon-circle" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                      <circle cx="9" cy="7" r="4"/>
+                      <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                  </div>
+                  <span class="lomba-badge">Kreasi UI/UX Nasional</span>
+                </div>
+
+                <div class="lomba-heading">
+                  <h3 class="lomba-title">Ruang Reka</h3>
+                  <p class="tim-creator">Dibuka oleh <strong>Nabila Vina</strong> · Mahasiswa</p>
+                </div>
+
+                <hr class="card-divider">
+
+                <div class="tim-advisor is-confirmed">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                  <span>Pembimbing: Dr. Maya Anggraini</span>
+                </div>
+
+                <hr class="card-divider">
+
+                <div class="tim-member-row">
+                  <span class="lomba-stat-label">Anggota Saat Ini</span>
+                  <span class="tim-member-count">2/3 anggota</span>
+                </div>
+
+                <hr class="card-divider">
+
+                <div>
+                  <p class="lomba-stat-label">Posisi Dibutuhkan</p>
+                  <ul class="tim-pos-list">
+                    <li class="tim-pos-item">
+                      <span class="tim-pos-role">UX Researcher</span>
+                      <span class="tim-pos-qty">1 orang</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="tim-card-footer">
+                <hr class="card-divider">
+                <button type="button" class="lomba-btn-primary" data-open-tim-detail="3">
+                  <span>Lihat tim</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14"/>
+                    <path d="m12 5 7 7-7 7"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div id="tim-empty-state" class="empty-box is-hidden">
+          Tidak ada tim yang cocok dengan filter atau pencarianmu.
+        </div>
+
+        <div class="section-bottom-action">
+          <button type="button" class="btn-buat-tim" data-open-buat-tim>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14"/>
+              <path d="M12 5v14"/>
+            </svg>
+            <span>Buat Tim</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <div class="site-footer-wrapper">
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="assets/image/Logo.png" alt="KolaboraCampus">
+        <p class="footer-tagline">Kolaborasi cerdas untuk prestasi yang lebih besar.</p>
+      </div>
+      <p class="footer-sso">Terhubung melalui SSO Universitas Brawijaya</p>
+    </footer>
+  </div>
+
+  <!-- ====================================================================
+       DIALOG DETAIL TIM (DetailTimDialog.jsx)
+       ==================================================================== -->
+  <div id="detail-tim-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="detail-tim-title">
+    <div class="modal-card modal-detail-tim">
+      <div class="detail-tim-topbar"></div>
+
+      <div class="detail-tim-header">
+        <div class="detail-header-left">
+          <div class="modal-icon-badge" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div>
+            <p id="detail-tim-comp" class="info-slide-category">GEMASTIK XVII</p>
+            <h2 id="detail-tim-title" class="detail-title">Nama Tim</h2>
+            <p id="detail-tim-creator" class="detail-organizer">Dibuka oleh ...</p>
+          </div>
+        </div>
+
+        <button type="button" class="modal-close-btn" data-close-modal aria-label="Tutup dialog">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 6 6 18"/>
+            <path d="m6 6 12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="detail-content">
+        <!-- Banner Status Pembimbing -->
+        <div id="detail-tim-advisor-banner" class="advisor-banner is-confirmed">
+          <div>
+            <p id="detail-tim-advisor-heading" class="advisor-banner-title">Sudah memiliki dosen pembimbing</p>
+            <p id="detail-tim-advisor-name" class="advisor-banner-sub">Dr. Budi Santoso</p>
+          </div>
+          <span id="detail-tim-advisor-badge" class="advisor-confirm-pill">Terkonfirmasi</span>
+        </div>
+
+        <!-- Grid 2 Kolom -->
+        <div class="detail-tim-grid">
+          <div class="detail-tim-left">
+            <div>
+              <h3 class="detail-subhead">Tentang tim</h3>
+              <p id="detail-tim-desc" class="detail-paragraph"></p>
+            </div>
+
+            <hr class="modal-divider">
+
+            <div>
+              <h3 class="detail-subhead">Posisi yang dibutuhkan</h3>
+              <ul id="detail-tim-positions" class="tim-pos-list is-bordered"></ul>
+            </div>
+          </div>
+
+          <div class="detail-tim-right">
+            <div class="detail-members-head">
+              <div>
+                <h3 class="detail-subhead">Anggota tim</h3>
+                <p class="detail-members-sub">Peran yang sudah terisi.</p>
+              </div>
+              <span id="detail-tim-count-badge" class="member-count-pill">3/5 anggota</span>
+            </div>
+
+            <div id="detail-tim-members" class="member-list-box"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-footer">
+        <button type="button" class="btn btn-outline" data-close-modal>Tutup</button>
+        <button type="button" id="btn-apply-tim" class="btn btn-primary">Ajukan bergabung →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       DIALOG BUAT TIM BARU (BuatTimDialog.jsx)
+       ==================================================================== -->
+  <div id="buat-tim-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="buat-tim-title">
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn modal-close-floating" data-close-modal aria-label="Tutup dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 6 6 18"/>
+          <path d="m6 6 12 12"/>
+        </svg>
+      </button>
+
+      <div class="modal-icon-badge" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      </div>
+
+      <h2 id="buat-tim-title" class="modal-title">Buat tim baru</h2>
+      <p class="modal-subtitle">
+        Lengkapi identitas tim dan kebutuhan anggota. Tim akan langsung muncul di daftar tim dan &ldquo;Tim Saya&rdquo;.
+      </p>
+
+      <form id="buat-tim-form" class="modal-form">
+        <div class="form-field">
+          <label for="nama-tim" class="form-label">Nama tim</label>
+          <input id="nama-tim" name="nama_tim" type="text" required placeholder="Contoh: Tim Aurora" class="form-control">
+        </div>
+
+        <div class="form-field">
+          <label for="lomba-diikuti" class="form-label">Lomba yang diikuti</label>
+          <div class="select-wrapper">
+            <select id="lomba-diikuti" name="lomba" class="form-control form-select">
+              <option value="GEMASTIK XVII">GEMASTIK XVII</option>
+              <option value="L'Oréal Brandstorm">L'Oréal Brandstorm</option>
+              <option value="Kreasi UI/UX Nasional">Kreasi UI/UX Nasional</option>
+            </select>
+            <svg class="select-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <p class="form-label">Posisi yang dibutuhkan</p>
+          <div class="position-cols-head">
+            <span class="position-col-name">Nama Posisi</span>
+            <span class="position-col-qty">Jumlah</span>
+          </div>
+
+          <div id="positions-list" class="positions-list">
+            <div class="position-row">
+              <input type="text" name="posisi_nama[]" required placeholder="Contoh: Backend Developer" aria-label="Nama posisi" class="form-control position-input-name">
+              <input type="number" name="posisi_jumlah[]" min="1" max="10" value="1" aria-label="Jumlah posisi" class="form-control position-input-qty">
+            </div>
+          </div>
+
+          <button type="button" id="btn-add-position" class="btn-add-position">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14"/>
+              <path d="M12 5v14"/>
+            </svg>
+            <span>Tambah posisi</span>
+          </button>
+        </div>
+
+        <div class="form-field">
+          <label for="pembuka-tim" class="form-label">Siapa yang membuka tim?</label>
+          <div class="select-wrapper">
+            <select id="pembuka-tim" name="pembuka_tim" class="form-control form-select">
+              <option value="Saya sebagai mahasiswa">Saya sebagai mahasiswa</option>
+              <option value="Saya sebagai dosen">Saya sebagai dosen</option>
+            </select>
+            <svg class="select-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </div>
+        </div>
+
+        <fieldset class="form-fieldset">
+          <legend class="form-label">Kondisi dosen pembimbing</legend>
+
+          <div class="radio-card-grid">
+            <label class="radio-card" for="dosen-sudah">
+              <input type="radio" id="dosen-sudah" name="kondisi_dosen" value="sudah" class="sr-only">
+              <span class="radio-dot" aria-hidden="true"></span>
+              <span>Sudah ada</span>
+            </label>
+
+            <label class="radio-card is-selected" for="dosen-belum">
+              <input type="radio" id="dosen-belum" name="kondisi_dosen" value="belum" checked class="sr-only">
+              <span class="radio-dot" aria-hidden="true"></span>
+              <span>Belum ada</span>
+            </label>
+          </div>
+
+          <p id="kondisi-dosen-hint" class="form-hint">
+            Tim akan ditandai &ldquo;Mencari dosen pembimbing&rdquo;.
+          </p>
+        </fieldset>
+
+        <hr class="modal-divider">
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" data-close-modal>Batal</button>
+          <button type="submit" class="btn btn-primary">+ Buat tim &amp; buka workspace</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Status Global -->
+  <div id="status-toast" class="status-toast" role="status" aria-live="polite" aria-atomic="true">
+    <div>
+      <p id="status-toast-title" class="status-toast-title"></p>
+      <p id="status-toast-message" class="status-toast-message"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

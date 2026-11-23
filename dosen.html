@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dosen Pembimbing — KolaboraCampus</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#konten-utama" class="skip-link">Lewati ke konten utama</a>
+
+  <!-- HEADER & NAVIGASI (Aktif: Dosen) -->
+  <div class="site-header-wrapper">
+    <header class="site-header">
+      <a href="index.html" class="header-logo">
+        <img src="assets/image/Logo.png" alt="KolaboraCampus">
+      </a>
+
+      <nav aria-label="Navigasi utama" class="desktop-nav">
+        <a href="index.html" class="nav-link"><span>Beranda</span></a>
+        <a href="jelajah-tim.html" class="nav-link"><span>Jelajah Tim</span></a>
+        <a href="tim-saya.html" class="nav-link"><span>Tim Saya</span></a>
+        <a href="dosen.html" class="nav-link is-active" aria-current="page"><span>Dosen</span></a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" id="notprof-btn" class="notprof-btn" aria-label="Notifikasi dan Profil">
+          <img src="assets/image/NotProf.png" alt="Notifikasi dan Profil">
+        </button>
+
+        <button
+          type="button"
+          id="mobile-menu-toggle"
+          class="mobile-menu-toggle"
+          aria-label="Buka menu"
+          aria-expanded="false"
+          aria-controls="mobile-nav-drawer"
+        >
+          <svg class="icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+          </svg>
+          <svg class="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+      <nav aria-label="Navigasi mobile" class="mobile-nav">
+        <a href="index.html" class="nav-link"><span>Beranda</span></a>
+        <a href="jelajah-tim.html" class="nav-link"><span>Jelajah Tim</span></a>
+        <a href="tim-saya.html" class="nav-link"><span>Tim Saya</span></a>
+        <a href="dosen.html" class="nav-link is-active" aria-current="page"><span>Dosen</span></a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- KONTEN UTAMA DOSEN PEMBIMBING -->
+  <main id="konten-utama" class="page-main" tabindex="-1">
+    <!-- 1. Header Halaman -->
+    <section class="workspace-head-section" aria-label="Judul halaman dosen pembimbing">
+      <div class="container">
+        <div class="workspace-head-row">
+          <div>
+            <p class="workspace-eyebrow">DOSEN PEMBIMBING</p>
+            <h1 class="workspace-title">Temukan dosen pembimbing.</h1>
+            <p class="workspace-subtitle">Pilih berdasarkan bidang, kuota, dan kecocokan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Rekomendasi Dosen + Pencarian (Dosen.jsx + DosenCard.jsx) -->
+    <section id="dosen-page-root" class="workspace-tabs-section" aria-labelledby="judul-rekomendasi-dosen">
+      <div class="container">
+        <div class="dosen-top-bar">
+          <div>
+            <h2 id="judul-rekomendasi-dosen" class="panel-card-title">Rekomendasi dosen</h2>
+            <p class="panel-card-sub">Berdasarkan topik GEMASTIK dan kebutuhan Tim Aurora.</p>
+          </div>
+
+          <div class="dosen-search-wrap">
+            <label for="dosen-search-input" class="sr-only">Cari nama atau bidang dosen</label>
+            <svg class="input-left-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+            </svg>
+            <input
+              type="search"
+              id="dosen-search-input"
+              class="form-control input-with-left-icon"
+              placeholder="Cari nama atau bidang..."
+              autocomplete="off"
+            >
+          </div>
+        </div>
+
+        <p id="dosen-search-status" class="sr-only" role="status" aria-live="polite"></p>
+
+        <!-- Grid Kartu Dosen -->
+        <div id="dosen-cards-grid" class="dosen-cards-grid">
+          <!-- Dosen 1 (Terpilih secara default) -->
+          <article
+            class="dosen-card is-selected"
+            tabindex="0"
+            role="button"
+            aria-pressed="true"
+            data-dosen-id="1"
+            data-dosen-name="Dr. Budi Santoso"
+            data-dosen-dept="Teknik Informatika"
+            data-keywords="dr budi santoso teknik informatika dosen smart city iot internet of things"
+          >
+            <div class="dosen-card-left">
+              <div class="dosen-avatar avatar-pink" aria-hidden="true">BS</div>
+
+              <div class="kandidat-info-block">
+                <div class="kandidat-name-row">
+                  <h3 class="kandidat-name">Dr. Budi Santoso</h3>
+                  <span class="match-badge">96% sesuai</span>
+                </div>
+                <p class="dosen-role-text">Dosen · Smart City &amp; IoT</p>
+                <div class="skill-tags">
+                  <span class="skill-tag">Internet of Things</span>
+                  <span class="skill-tag">Smart City</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dosen-card-right">
+              <span class="status-pill-green">✓ Kuota tersedia</span>
+              <button
+                type="button"
+                class="dosen-profile-link"
+                data-dosen-profile="Dr. Budi Santoso · Teknik Informatika (Smart City & IoT)"
+              >
+                Lihat profil
+              </button>
+            </div>
+          </article>
+
+          <!-- Dosen 2 -->
+          <article
+            class="dosen-card"
+            tabindex="0"
+            role="button"
+            aria-pressed="false"
+            data-dosen-id="2"
+            data-dosen-name="Dr. Maya Anggraini"
+            data-dosen-dept="Sistem Informasi"
+            data-keywords="dr maya anggraini sistem informasi dosen product business product strategy business model"
+          >
+            <div class="dosen-card-left">
+              <div class="dosen-avatar avatar-gray" aria-hidden="true">MA</div>
+
+              <div class="kandidat-info-block">
+                <div class="kandidat-name-row">
+                  <h3 class="kandidat-name">Dr. Maya Anggraini</h3>
+                  <span class="match-badge">92% sesuai</span>
+                </div>
+                <p class="dosen-role-text">Dosen · Product &amp; Business</p>
+                <div class="skill-tags">
+                  <span class="skill-tag">Product Strategy</span>
+                  <span class="skill-tag">Business Model</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dosen-card-right">
+              <span class="status-pill-green">✓ Kuota tersedia</span>
+              <button
+                type="button"
+                class="dosen-profile-link"
+                data-dosen-profile="Dr. Maya Anggraini · Sistem Informasi (Product & Business)"
+              >
+                Lihat profil
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <div id="dosen-page-empty" class="empty-box is-hidden">
+          <p class="approved-name">Dosen tidak ditemukan</p>
+          <p class="panel-card-sub">Coba kata kunci nama, bidang, atau keahlian lain.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Grid Utama: Form Pengajuan (Kiri 7) + Rekap & Status (Kanan 5) -->
+    <section class="workspace-body-section">
+      <div class="container">
+        <div class="dosen-main-grid">
+          <!-- Kolom Kiri: Form Pengajuan Pembimbing (FormPengajuanPembimbing.jsx) -->
+          <section class="panel-card dosen-form-col" aria-labelledby="judul-form-pengajuan">
+            <div class="step-card-header">
+              <div class="step-number-badge" aria-hidden="true">1</div>
+              <div>
+                <h2 id="judul-form-pengajuan" class="panel-card-title">Form pengajuan pembimbing</h2>
+                <p class="panel-card-sub">Pastikan detail pengajuan sudah lengkap.</p>
+              </div>
+            </div>
+
+            <form id="pengajuan-pembimbing-form" class="modal-form">
+              <!-- Dosen Tujuan -->
+              <div class="form-field">
+                <label for="dosen-tujuan" class="form-label">Dosen tujuan</label>
+                <input
+                  id="dosen-tujuan"
+                  name="dosen_tujuan"
+                  type="text"
+                  required
+                  value="Dr. Budi Santoso · Teknik Informatika"
+                  aria-describedby="hint-dosen-tujuan"
+                  class="form-control"
+                >
+                <p id="hint-dosen-tujuan" class="form-hint">
+                  Rekomendasi berdasarkan topik dan rekam jejak lomba.
+                </p>
+              </div>
+
+              <!-- Judul / Topik Lomba -->
+              <div class="form-field">
+                <label for="judul-topik" class="form-label">Judul / topik lomba</label>
+                <input
+                  id="judul-topik"
+                  name="judul_topik"
+                  type="text"
+                  required
+                  value="Sistem Mitigasi Banjir Berbasis IoT"
+                  placeholder="Masukkan judul atau topik lomba"
+                  aria-describedby="hint-judul-topik"
+                  class="form-control"
+                >
+                <p id="hint-judul-topik" class="form-hint">Gunakan judul ringkas dan spesifik.</p>
+              </div>
+
+              <!-- Pesan Pengajuan -->
+              <div class="form-field">
+                <label for="pesan-pengajuan" class="form-label">Pesan pengajuan</label>
+                <textarea
+                  id="pesan-pengajuan"
+                  name="pesan_pengajuan"
+                  rows="4"
+                  maxlength="500"
+                  required
+                  placeholder="Tulis pesan singkat untuk dosen pembimbing..."
+                  aria-describedby="pesan-char-count"
+                  class="form-control form-textarea"
+                >Selamat siang Pak Budi, kami sedang mempersiapkan GEMASTIK kategori Kota Cerdas. Kami berharap Bapak bersedia membimbing tim kami.</textarea>
+                <p id="pesan-char-count" class="form-hint">133/500 karakter</p>
+              </div>
+
+              <!-- Proposal Tim -->
+              <div class="form-field">
+                <label for="proposal-file-input" class="form-label">Proposal tim</label>
+                <div class="proposal-upload-box">
+                  <div class="proposal-file-left">
+                    <svg class="proposal-file-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                      <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/>
+                      <path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/>
+                    </svg>
+                    <div class="proposal-file-info">
+                      <p id="proposal-file-name" class="proposal-file-name">Proposal_Gemastik_TimAurora.pdf</p>
+                      <p id="proposal-file-meta" class="proposal-file-meta">PDF · 2,4 MB</p>
+                    </div>
+                  </div>
+
+                  <input
+                    type="file"
+                    id="proposal-file-input"
+                    accept=".pdf,.doc,.docx"
+                    class="sr-only"
+                  >
+                  <button type="button" id="btn-change-proposal" class="proposal-change-btn">
+                    Ganti file
+                  </button>
+                </div>
+              </div>
+
+              <button type="submit" id="btn-submit-pengajuan" class="btn btn-primary btn-full">
+                <span>Kirim pengajuan</span>
+              </button>
+            </form>
+          </section>
+
+          <!-- Kolom Kanan: Rekap Tim & Status Pengajuan -->
+          <div class="dosen-side-col">
+            <!-- Rekap Tim (RekapTim.jsx) -->
+            <section class="panel-card" aria-labelledby="judul-rekap-tim">
+              <div class="step-card-header">
+                <div class="step-number-badge" aria-hidden="true">2</div>
+                <div>
+                  <h2 id="judul-rekap-tim" class="panel-card-title">Rekap tim</h2>
+                  <p class="panel-card-sub">Tim Aurora · GEMASTIK</p>
+                </div>
+              </div>
+
+              <ul class="rekap-list">
+                <li class="rekap-item">
+                  <div class="rekap-member-left">
+                    <div class="matrix-avatar" aria-hidden="true">NP</div>
+                    <div>
+                      <p class="approved-name">Nadia Putri</p>
+                      <p class="approved-role">Ketua Tim</p>
+                    </div>
+                  </div>
+                  <span class="rekap-check" aria-label="Anggota terkonfirmasi">✓</span>
+                </li>
+
+                <li class="rekap-item">
+                  <div class="rekap-member-left">
+                    <div class="matrix-avatar" aria-hidden="true">RM</div>
+                    <div>
+                      <p class="approved-name">Raka Mahendra</p>
+                      <p class="approved-role">Frontend Developer</p>
+                    </div>
+                  </div>
+                  <span class="rekap-check" aria-label="Anggota terkonfirmasi">✓</span>
+                </li>
+
+                <li class="rekap-item">
+                  <div class="rekap-member-left">
+                    <div class="matrix-avatar avatar-gray" aria-hidden="true">SA</div>
+                    <div>
+                      <p class="approved-name">Sarah Azzahra</p>
+                      <p class="approved-role">Business Strategist</p>
+                    </div>
+                  </div>
+                  <span class="rekap-check" aria-label="Anggota terkonfirmasi">✓</span>
+                </li>
+              </ul>
+            </section>
+
+            <!-- Status Pengajuan (StatusPengajuan.jsx) -->
+            <section class="panel-card" aria-labelledby="judul-status-pengajuan">
+              <h2 id="judul-status-pengajuan" class="panel-card-title">Status pengajuan</h2>
+
+              <ol id="status-pengajuan-timeline" class="timeline-list" aria-live="polite">
+                <!-- Tahap 1 -->
+                <li class="timeline-item">
+                  <span class="timeline-line" aria-hidden="true"></span>
+                  <div class="timeline-dot is-completed" aria-hidden="true">✓</div>
+                  <div class="timeline-text">
+                    <p class="timeline-title">Tim terbentuk</p>
+                    <p class="timeline-sub">18 Okt · 14.32</p>
+                  </div>
+                </li>
+
+                <!-- Tahap 2 -->
+                <li class="timeline-item">
+                  <span class="timeline-line" aria-hidden="true"></span>
+                  <div id="step2-dot" class="timeline-dot is-active" aria-hidden="true">➤</div>
+                  <div class="timeline-text">
+                    <p id="step2-title" class="timeline-title">Pengajuan siap dikirim</p>
+                    <p id="step2-sub" class="timeline-sub">Lengkapi dan kirim formulir</p>
+                  </div>
+                </li>
+
+                <!-- Tahap 3 -->
+                <li class="timeline-item is-last">
+                  <div id="step3-dot" class="timeline-dot is-upcoming" aria-hidden="true">3</div>
+                  <div class="timeline-text">
+                    <p class="timeline-title">Persetujuan dosen</p>
+                    <p id="step3-sub" class="timeline-sub">Belum tersedia</p>
+                  </div>
+                </li>
+              </ol>
+            </section>
+          </div>
+        </div>
+
+        <!-- Tombol Buat Tim -->
+        <div class="section-bottom-action">
+          <button type="button" class="btn-buat-tim" data-open-buat-tim>
+            <span>+ Buat Tim</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <div class="site-footer-wrapper">
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="assets/image/Logo.png" alt="KolaboraCampus">
+        <p class="footer-tagline">Kolaborasi cerdas untuk prestasi yang lebih besar.</p>
+      </div>
+      <p class="footer-sso">Terhubung melalui SSO Universitas Brawijaya</p>
+    </footer>
+  </div>
+
+  <!-- DIALOG BUAT TIM BARU -->
+  <div id="buat-tim-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="buat-tim-title">
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn modal-close-floating" data-close-modal aria-label="Tutup dialog">✕</button>
+      <div class="modal-icon-badge" aria-hidden="true">👥</div>
+      <h2 id="buat-tim-title" class="modal-title">Buat tim baru</h2>
+      <p class="modal-subtitle">Lengkapi identitas tim dan kebutuhan anggota. Tim akan langsung muncul di &ldquo;Tim Saya&rdquo;.</p>
+
+      <form id="buat-tim-form" class="modal-form">
+        <div class="form-field">
+          <label for="nama-tim" class="form-label">Nama tim</label>
+          <input id="nama-tim" name="nama_tim" type="text" required placeholder="Contoh: Tim Aurora" class="form-control">
+        </div>
+
+        <div class="form-field">
+          <label for="lomba-diikuti" class="form-label">Lomba yang diikuti</label>
+          <div class="select-wrapper">
+            <select id="lomba-diikuti" name="lomba" class="form-control form-select">
+              <option value="GEMASTIK XVII">GEMASTIK XVII</option>
+              <option value="L'Oréal Brandstorm">L'Oréal Brandstorm</option>
+              <option value="Kreasi UI/UX Nasional">Kreasi UI/UX Nasional</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <p class="form-label">Posisi yang dibutuhkan</p>
+          <div id="positions-list" class="positions-list">
+            <div class="position-row">
+              <input type="text" name="posisi_nama[]" required placeholder="Contoh: Backend Developer" aria-label="Nama posisi" class="form-control position-input-name">
+              <input type="number" name="posisi_jumlah[]" min="1" max="10" value="1" aria-label="Jumlah posisi" class="form-control position-input-qty">
+            </div>
+          </div>
+          <button type="button" id="btn-add-position" class="btn-add-position">+ Tambah posisi</button>
+        </div>
+
+        <hr class="modal-divider">
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" data-close-modal>Batal</button>
+          <button type="submit" class="btn btn-primary">+ Buat tim &amp; buka workspace</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Status Global -->
+  <div id="status-toast" class="status-toast" role="status" aria-live="polite" aria-atomic="true">
+    <div>
+      <p id="status-toast-title" class="status-toast-title"></p>
+      <p id="status-toast-message" class="status-toast-message"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

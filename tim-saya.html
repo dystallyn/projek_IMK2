@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tim Saya — KolaboraCampus</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#konten-utama" class="skip-link">Lewati ke konten utama</a>
+
+  <!-- HEADER & NAVIGASI (Aktif: Tim Saya) -->
+  <div class="site-header-wrapper">
+    <header class="site-header">
+      <a href="index.html" class="header-logo">
+        <img src="assets/image/Logo.png" alt="KolaboraCampus">
+      </a>
+
+      <nav aria-label="Navigasi utama" class="desktop-nav">
+        <a href="index.html" class="nav-link"><span>Beranda</span></a>
+        <a href="jelajah-tim.html" class="nav-link"><span>Jelajah Tim</span></a>
+        <a href="tim-saya.html" class="nav-link is-active" aria-current="page"><span>Tim Saya</span></a>
+        <a href="dosen.html" class="nav-link"><span>Dosen</span></a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" id="notprof-btn" class="notprof-btn" aria-label="Notifikasi dan Profil">
+          <img src="assets/image/NotProf.png" alt="Notifikasi dan Profil">
+        </button>
+
+        <button
+          type="button"
+          id="mobile-menu-toggle"
+          class="mobile-menu-toggle"
+          aria-label="Buka menu"
+          aria-expanded="false"
+          aria-controls="mobile-nav-drawer"
+        >
+          <svg class="icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+          </svg>
+          <svg class="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+      <nav aria-label="Navigasi mobile" class="mobile-nav">
+        <a href="index.html" class="nav-link"><span>Beranda</span></a>
+        <a href="jelajah-tim.html" class="nav-link"><span>Jelajah Tim</span></a>
+        <a href="tim-saya.html" class="nav-link is-active" aria-current="page"><span>Tim Saya</span></a>
+        <a href="dosen.html" class="nav-link"><span>Dosen</span></a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- KONTEN UTAMA TIM SAYA -->
+  <main id="konten-utama" class="page-main" tabindex="-1">
+    <!-- 1. Header Identitas Tim -->
+    <section class="workspace-head-section" aria-label="Identitas tim">
+      <div class="container">
+        <div class="workspace-head-row">
+          <div>
+            <p class="workspace-eyebrow">TIM SAYA / WORKSPACE</p>
+            <h1 class="workspace-title">Tim Aurora</h1>
+            <p class="workspace-subtitle">GEMASTIK XVII · Divisi Kota Cerdas</p>
+          </div>
+
+          <span class="status-pill-green">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>
+            </svg>
+            <span>Pembimbing disetujui</span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Tab Navigasi Workspace -->
+    <section class="workspace-tabs-section" aria-label="Navigasi workspace Tim Aurora">
+      <div class="container">
+        <div class="workspace-tabs" role="tablist" aria-label="Navigasi workspace Tim Aurora">
+          <button type="button" class="workspace-tab is-active" role="tab" aria-selected="true" data-workspace-tab="ringkasan">
+            <span>Ringkasan</span>
+          </button>
+
+          <a href="jadwal-diskusi.html" class="workspace-tab">
+            <span>Jadwal diskusi</span>
+            <span class="tab-badge">1</span>
+          </a>
+
+          <button type="button" class="workspace-tab" role="tab" aria-selected="false" data-workspace-tab="dokumen">
+            <span>Dokumen</span>
+          </button>
+
+          <button type="button" class="workspace-tab" role="tab" aria-selected="false" data-workspace-tab="diskusi">
+            <span>Diskusi</span>
+            <span class="tab-badge">12</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Panel Konten Berdasarkan Tab Aktif -->
+    <section class="workspace-body-section">
+      <div class="container">
+        <!-- TAB 1: RINGKASAN -->
+        <div id="tab-panel-ringkasan" class="workspace-panel" data-tab-panel="ringkasan">
+          <div class="workspace-grid">
+            <!-- Kolom Kiri (8 kolom) -->
+            <div class="workspace-main-col">
+              <!-- Kartu Anggota Disetujui -->
+              <section class="panel-card" aria-labelledby="judul-anggota-disetujui">
+                <div class="panel-card-head">
+                  <div>
+                    <h2 id="judul-anggota-disetujui" class="panel-card-title">Anggota disetujui</h2>
+                    <p class="panel-card-sub">3 dari 3 posisi telah terisi.</p>
+                  </div>
+
+                  <span class="status-pill-green">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                      <circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>
+                    </svg>
+                    <span>Tim lengkap</span>
+                  </span>
+                </div>
+
+                <div class="approved-list">
+                  <div class="approved-item">
+                    <div class="approved-member-left">
+                      <div class="member-avatar avatar-amber" aria-hidden="true">NP</div>
+                      <div>
+                        <p class="approved-name">Nadia Putri</p>
+                        <p class="approved-role">Ketua Tim · Product Designer</p>
+                      </div>
+                    </div>
+                    <span class="status-pill-green">Disetujui</span>
+                  </div>
+
+                  <div class="approved-item">
+                    <div class="approved-member-left">
+                      <div class="member-avatar avatar-pink" aria-hidden="true">RM</div>
+                      <div>
+                        <p class="approved-name">Raka Mahendra</p>
+                        <p class="approved-role">Frontend Developer</p>
+                      </div>
+                    </div>
+                    <span class="status-pill-green">Disetujui</span>
+                  </div>
+
+                  <div class="approved-item">
+                    <div class="approved-member-left">
+                      <div class="member-avatar avatar-gray" aria-hidden="true">SA</div>
+                      <div>
+                        <p class="approved-name">Sarah Azzahra</p>
+                        <p class="approved-role">Business Strategist</p>
+                      </div>
+                    </div>
+                    <span class="status-pill-green">Disetujui</span>
+                  </div>
+                </div>
+
+                <!-- Status Belum Dikunci -->
+                <div id="lock-team-prompt" class="lock-box">
+                  <div class="lock-box-left">
+                    <svg class="lock-icon-maroon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                    <div>
+                      <p class="lock-box-title">Siap mengunci susunan tim?</p>
+                      <p class="lock-box-sub">Pastikan semua data anggota sudah benar.</p>
+                    </div>
+                  </div>
+                  <button type="button" id="btn-open-lock-dialog" class="btn btn-primary">Lock Team</button>
+                </div>
+
+                <!-- Status Sudah Dikunci (Muncul setelah konfirmasi) -->
+                <div id="lock-team-confirmed" class="lock-box is-locked is-hidden" role="status" aria-live="polite">
+                  <div class="lock-box-left">
+                    <svg class="lock-icon-green" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                      <path d="M20 6 9 17l-5-5"/>
+                    </svg>
+                    <div>
+                      <p class="lock-box-title is-green">Tim telah dikunci</p>
+                      <p id="lock-confirmed-date" class="lock-box-sub">Susunan final dikonfirmasi.</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Kartu Workspace Tim -->
+              <section class="panel-card" aria-labelledby="judul-workspace-tim">
+                <div class="panel-card-head">
+                  <div>
+                    <h2 id="judul-workspace-tim" class="panel-card-title">Workspace tim</h2>
+                    <p class="panel-card-sub">Kelola semua kebutuhan lomba dalam satu ruang.</p>
+                  </div>
+
+                  <button type="button" class="link-action" data-switch-tab="dokumen">
+                    <span>Buka workspace →</span>
+                  </button>
+                </div>
+
+                <div class="shortcut-grid">
+                  <button type="button" class="shortcut-card" data-switch-tab="dokumen">
+                    <div class="shortcut-icon avatar-pink" aria-hidden="true">📁</div>
+                    <h3 class="shortcut-title">Dokumen tim</h3>
+                    <p class="shortcut-sub">8 file · 2 baru</p>
+                  </button>
+
+                  <button type="button" class="shortcut-card" data-switch-tab="diskusi">
+                    <div class="shortcut-icon shortcut-green" aria-hidden="true">💬</div>
+                    <h3 class="shortcut-title">Diskusi</h3>
+                    <p class="shortcut-sub">12 pesan belum dibaca</p>
+                  </button>
+
+                  <a href="jadwal-diskusi.html" class="shortcut-card">
+                    <div class="shortcut-icon avatar-amber" aria-hidden="true">📅</div>
+                    <h3 class="shortcut-title">Timeline</h3>
+                    <p class="shortcut-sub">Milestone berikutnya 3 hari</p>
+                  </a>
+                </div>
+              </section>
+            </div>
+
+            <!-- Kolom Kanan (4 kolom): Profil Dosen Pembimbing -->
+            <aside class="workspace-side-col" aria-label="Profil dosen pembimbing">
+              <div class="advisor-profile-card">
+                <div class="advisor-banner-dark" aria-hidden="true">
+                  <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/>
+                    <path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>
+                  </svg>
+                </div>
+
+                <div class="advisor-profile-body">
+                  <div class="advisor-avatar-box" aria-hidden="true">BS</div>
+                  <span class="status-pill-green advisor-status-badge">Aktif membimbing</span>
+
+                  <h3 class="advisor-profile-name">Dr. Budi Santoso</h3>
+                  <p class="advisor-profile-meta">Teknik Informatika · Smart City &amp; IoT</p>
+
+                  <div class="advisor-stats-box">
+                    <div class="advisor-stat-col">
+                      <p class="advisor-stat-label">Respons rata-rata</p>
+                      <p class="advisor-stat-val">&lt; 1 hari</p>
+                    </div>
+                    <div class="advisor-stat-col">
+                      <p class="advisor-stat-label">Tim dibimbing</p>
+                      <p class="advisor-stat-val">4 tim</p>
+                    </div>
+                  </div>
+
+                  <button type="button" class="btn btn-outline advisor-contact-btn" data-switch-tab="diskusi">
+                    <span>Hubungi dosen</span>
+                  </button>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+
+        <!-- TAB 2: DOKUMEN -->
+        <div id="tab-panel-dokumen" class="workspace-panel is-hidden" data-tab-panel="dokumen">
+          <div class="empty-box">
+            <p class="approved-name">Dokumen tim</p>
+            <p class="panel-card-sub">Daftar 8 berkas proposal dan lampiran Tim Aurora tampil di ruang ini.</p>
+          </div>
+        </div>
+
+        <!-- TAB 3: DISKUSI -->
+        <div id="tab-panel-diskusi" class="workspace-panel is-hidden" data-tab-panel="diskusi">
+          <div class="empty-box">
+            <p class="approved-name">Diskusi tim</p>
+            <p class="panel-card-sub">Ruang percakapan anggota Tim Aurora bersama Dr. Budi Santoso (12 pesan belum dibaca).</p>
+          </div>
+        </div>
+
+        <!-- Tombol Buat Tim -->
+        <div class="section-bottom-action">
+          <button type="button" class="btn-buat-tim" data-open-buat-tim>
+            <span>+ Buat Tim</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <div class="site-footer-wrapper">
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="assets/image/Logo.png" alt="KolaboraCampus">
+        <p class="footer-tagline">Kolaborasi cerdas untuk prestasi yang lebih besar.</p>
+      </div>
+      <p class="footer-sso">Terhubung melalui SSO Universitas Brawijaya</p>
+    </footer>
+  </div>
+
+  <!-- DIALOG KONFIRMASI KUNCI TIM (KunciTimDialog.jsx) -->
+  <div id="kunci-tim-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="kunci-tim-title">
+    <div class="modal-card modal-lock-card">
+      <button type="button" class="modal-close-btn modal-close-floating" data-close-modal aria-label="Tutup dialog">✕</button>
+
+      <div class="modal-icon-badge" aria-hidden="true">🔒</div>
+
+      <h2 id="kunci-tim-title" class="modal-title">Kunci &amp; Konfirmasi Tim?</h2>
+      <p class="modal-subtitle">
+        Setelah dikunci, susunan anggota tidak dapat diubah tanpa persetujuan admin. Pastikan seluruh anggota dan perannya sudah benar.
+      </p>
+
+      <div class="warning-callout">
+        <p class="warning-callout-title">⚠ Tindakan ini memengaruhi seluruh tim</p>
+        <p class="warning-callout-sub">Undangan yang masih tertunda akan otomatis dibatalkan.</p>
+      </div>
+
+      <hr class="modal-divider modal-divider-spaced">
+
+      <div class="modal-actions">
+        <button type="button" class="btn btn-outline" data-close-modal>Batal</button>
+        <button type="button" id="btn-confirm-lock-team" class="btn btn-danger">Ya, kunci tim</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIALOG BUAT TIM BARU -->
+  <div id="buat-tim-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="buat-tim-title">
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn modal-close-floating" data-close-modal aria-label="Tutup dialog">✕</button>
+      <div class="modal-icon-badge" aria-hidden="true">👥</div>
+      <h2 id="buat-tim-title" class="modal-title">Buat tim baru</h2>
+      <p class="modal-subtitle">Lengkapi identitas tim dan kebutuhan anggota. Tim akan langsung muncul di &ldquo;Tim Saya&rdquo;.</p>
+
+      <form id="buat-tim-form" class="modal-form">
+        <div class="form-field">
+          <label for="nama-tim" class="form-label">Nama tim</label>
+          <input id="nama-tim" name="nama_tim" type="text" required placeholder="Contoh: Tim Aurora" class="form-control">
+        </div>
+
+        <div class="form-field">
+          <label for="lomba-diikuti" class="form-label">Lomba yang diikuti</label>
+          <div class="select-wrapper">
+            <select id="lomba-diikuti" name="lomba" class="form-control form-select">
+              <option value="GEMASTIK XVII">GEMASTIK XVII</option>
+              <option value="L'Oréal Brandstorm">L'Oréal Brandstorm</option>
+              <option value="Kreasi UI/UX Nasional">Kreasi UI/UX Nasional</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <p class="form-label">Posisi yang dibutuhkan</p>
+          <div id="positions-list" class="positions-list">
+            <div class="position-row">
+              <input type="text" name="posisi_nama[]" required placeholder="Contoh: Backend Developer" aria-label="Nama posisi" class="form-control position-input-name">
+              <input type="number" name="posisi_jumlah[]" min="1" max="10" value="1" aria-label="Jumlah posisi" class="form-control position-input-qty">
+            </div>
+          </div>
+          <button type="button" id="btn-add-position" class="btn-add-position">+ Tambah posisi</button>
+        </div>
+
+        <hr class="modal-divider">
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" data-close-modal>Batal</button>
+          <button type="submit" class="btn btn-primary">+ Buat tim &amp; buka workspace</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Status Global -->
+  <div id="status-toast" class="status-toast" role="status" aria-live="polite" aria-atomic="true">
+    <div>
+      <p id="status-toast-title" class="status-toast-title"></p>
+      <p id="status-toast-message" class="status-toast-message"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

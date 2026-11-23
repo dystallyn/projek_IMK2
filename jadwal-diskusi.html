@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jadwal Diskusi — KolaboraCampus</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#konten-utama" class="skip-link">Lewati ke konten utama</a>
+
+  <!-- HEADER & NAVIGASI (Pill aktif tetap di Tim Saya) -->
+  <div class="site-header-wrapper">
+    <header class="site-header">
+      <a href="index.html" class="header-logo">
+        <img src="assets/image/Logo.png" alt="KolaboraCampus">
+      </a>
+
+      <nav aria-label="Navigasi utama" class="desktop-nav">
+        <a href="index.html" class="nav-link"><span>Beranda</span></a>
+        <a href="jelajah-tim.html" class="nav-link"><span>Jelajah Tim</span></a>
+        <a href="tim-saya.html" class="nav-link is-active" aria-current="page"><span>Tim Saya</span></a>
+        <a href="dosen.html" class="nav-link"><span>Dosen</span></a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" id="notprof-btn" class="notprof-btn" aria-label="Notifikasi dan Profil">
+          <img src="assets/image/NotProf.png" alt="Notifikasi dan Profil">
+        </button>
+
+        <button
+          type="button"
+          id="mobile-menu-toggle"
+          class="mobile-menu-toggle"
+          aria-label="Buka menu"
+          aria-expanded="false"
+          aria-controls="mobile-nav-drawer"
+        >
+          <svg class="icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+          </svg>
+          <svg class="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+      <nav aria-label="Navigasi mobile" class="mobile-nav">
+        <a href="index.html" class="nav-link"><span>Beranda</span></a>
+        <a href="jelajah-tim.html" class="nav-link"><span>Jelajah Tim</span></a>
+        <a href="tim-saya.html" class="nav-link is-active" aria-current="page"><span>Tim Saya</span></a>
+        <a href="dosen.html" class="nav-link"><span>Dosen</span></a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- KONTEN UTAMA JADWAL DISKUSI -->
+  <main id="konten-utama" class="page-main" tabindex="-1">
+    <!-- 1. Header Identitas Tim -->
+    <section class="workspace-head-section" aria-label="Identitas tim">
+      <div class="container">
+        <div class="workspace-head-row">
+          <div>
+            <p class="workspace-eyebrow">TIM SAYA / WORKSPACE</p>
+            <h1 class="workspace-title">Tim Aurora</h1>
+            <p class="workspace-subtitle">GEMASTIK XVII · Divisi Kota Cerdas</p>
+          </div>
+
+          <span class="status-pill-green">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>
+            </svg>
+            <span>Pembimbing disetujui</span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Tab Navigasi Workspace -->
+    <section class="workspace-tabs-section" aria-label="Navigasi workspace Tim Aurora">
+      <div class="container">
+        <nav class="workspace-tabs" aria-label="Navigasi workspace Tim Aurora">
+          <a href="tim-saya.html" class="workspace-tab">
+            <span>Ringkasan</span>
+          </a>
+
+          <a href="jadwal-diskusi.html" class="workspace-tab is-active" aria-current="page">
+            <span>Jadwal diskusi</span>
+            <span class="tab-badge">1</span>
+          </a>
+
+          <a href="tim-saya.html" class="workspace-tab">
+            <span>Dokumen</span>
+          </a>
+
+          <a href="tim-saya.html" class="workspace-tab">
+            <span>Diskusi</span>
+            <span class="tab-badge">12</span>
+          </a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- 3. Isi Utama Jadwal Diskusi -->
+    <section id="jadwal-page-root" class="workspace-body-section">
+      <div class="container jadwal-stack">
+        <!-- Banner Informasi Jadwal (WorkspaceBanner.jsx) -->
+        <div class="workspace-banner">
+          <svg class="workspace-banner-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>
+          </svg>
+          <div>
+            <h2 class="workspace-banner-title">Jadwal adalah bagian dari Tim Aurora</h2>
+            <p class="workspace-banner-desc">
+              Hanya anggota tim ini yang dapat mengisi ketersediaan dan melihat hasilnya.
+            </p>
+          </div>
+        </div>
+
+        <!-- Panel Sinkronisasi Portal Akademik UB (SinkronJadwal.jsx) -->
+        <section class="sync-panel" aria-labelledby="judul-sinkron-jadwal">
+          <div class="sync-panel-left">
+            <div class="sync-icon-box" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>
+              </svg>
+            </div>
+
+            <div>
+              <p class="workspace-eyebrow">PORTAL AKADEMIK UB</p>
+              <h2 id="judul-sinkron-jadwal" class="panel-card-title">Jadwal kuliah anggota tersinkronisasi</h2>
+              <p class="panel-card-sub">Slot yang bentrok dengan kuliah otomatis tidak tersedia.</p>
+            </div>
+          </div>
+
+          <div class="sync-panel-right">
+            <div class="sync-avatar-stack" aria-label="Anggota tersinkronisasi">
+              <div class="sync-avatar" title="Anggota AR">AR<span class="sync-dot" aria-hidden="true"></span></div>
+              <div class="sync-avatar" title="Nadia Putri">NP<span class="sync-dot" aria-hidden="true"></span></div>
+              <div class="sync-avatar" title="Raka Mahendra">RM<span class="sync-dot" aria-hidden="true"></span></div>
+            </div>
+
+            <div class="sync-action-col">
+              <p class="sync-timestamp">Terakhir sinkron · <span id="last-synced-text">Hari ini, 09.42</span></p>
+              <button type="button" id="btn-resync-jadwal" class="btn btn-outline btn-sync">
+                <span>✓ Sinkron ulang</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Grid Ketersediaan Tambahan (Kiri) & Shared Free-Time (Kanan) -->
+        <div class="jadwal-grid">
+          <!-- Kiri (4 kolom): Ketersediaan Tambahan (KetersediaanTambahan.jsx) -->
+          <section class="panel-card jadwal-left-col" aria-labelledby="judul-ketersediaan">
+            <div class="card-icon-header">
+              <div class="modal-icon-badge" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div>
+                <h2 id="judul-ketersediaan" class="panel-card-title">Ketersediaan tambahan</h2>
+                <p class="panel-card-sub">Tambahkan kesibukan di luar jadwal kuliah.</p>
+              </div>
+            </div>
+
+            <form id="availability-form" class="availability-form">
+              <div class="form-field">
+                <label for="rentang-tanggal" class="form-label">Rentang tanggal</label>
+                <div class="input-icon-wrapper">
+                  <svg class="input-left-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                    <path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>
+                  </svg>
+                  <input id="rentang-tanggal" type="text" class="form-control input-with-left-icon" value="">
+                </div>
+              </div>
+
+              <fieldset class="form-fieldset">
+                <legend class="form-label">Waktu yang tersedia</legend>
+                <div id="availability-slots-list" class="availability-slots-list">
+                  <!-- Diisi dinamis oleh script.js -->
+                </div>
+                <p class="form-hint">Kamu dapat memilih lebih dari satu waktu.</p>
+              </fieldset>
+
+              <button type="submit" class="btn btn-outline btn-full">Simpan ketersediaan</button>
+            </form>
+          </section>
+
+          <!-- Kanan (8 kolom): Shared Free-Time (SharedFreeTime.jsx) -->
+          <section class="panel-card jadwal-right-col" aria-labelledby="judul-shared-freetime">
+            <div class="card-icon-header">
+              <div class="modal-icon-badge" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </div>
+              <div>
+                <h2 id="judul-shared-freetime" class="panel-card-title">Shared free-time</h2>
+                <p class="panel-card-sub">Semakin gelap, semakin banyak anggota tersedia.</p>
+              </div>
+            </div>
+
+            <!-- Tabel Semantik Ketersediaan (WCAG 2.2 AA) -->
+            <div class="matrix-scroll" role="region" aria-labelledby="judul-shared-freetime" tabindex="0">
+              <table class="freetime-table">
+                <caption class="sr-only">Matriks ketersediaan waktu diskusi seluruh anggota Tim Aurora</caption>
+                <thead>
+                  <tr id="freetime-head-row">
+                    <th scope="col" class="matrix-col-member">Anggota</th>
+                    <!-- Header 4 slot diisi dinamis oleh script.js -->
+                  </tr>
+                </thead>
+                <tbody id="freetime-body">
+                  <!-- Baris anggota diisi dinamis oleh script.js -->
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Banner Rekomendasi Slot Terbaik -->
+            <div id="best-slot-banner" class="best-slot-banner" role="status" aria-live="polite">
+              <div class="best-slot-left">
+                <span class="best-slot-sparkle" aria-hidden="true">✦</span>
+                <div>
+                  <p class="best-slot-title">Slot terbaik ditemukan</p>
+                  <p id="best-slot-label" class="best-slot-desc">-</p>
+                </div>
+              </div>
+              <span id="best-slot-count" class="status-pill-green">3/3 tersedia</span>
+            </div>
+          </section>
+        </div>
+
+        <!-- Panel Pilih Waktu Diskusi (PilihWaktuDiskusi.jsx) -->
+        <section class="pick-slot-panel" aria-labelledby="judul-pilih-waktu">
+          <div>
+            <h2 id="judul-pilih-waktu" class="panel-card-title">Pilih waktu diskusi</h2>
+            <p class="panel-card-sub">Slot terpilih akan dikirim ke kalender semua anggota.</p>
+          </div>
+
+          <div class="pick-slot-controls">
+            <div id="pick-slot-radiogroup" class="slot-radio-grid" role="radiogroup" aria-label="Pilih waktu diskusi">
+              <!-- 3 kartu slot diisi dinamis oleh script.js -->
+            </div>
+
+            <button type="button" id="btn-confirm-schedule" class="btn btn-primary btn-confirm-slot">
+              Konfirmasi jadwal
+            </button>
+          </div>
+        </section>
+
+        <!-- Tombol Buat Tim -->
+        <div class="section-bottom-action">
+          <button type="button" class="btn-buat-tim" data-open-buat-tim>
+            <span>+ Buat Tim</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <div class="site-footer-wrapper">
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="assets/image/Logo.png" alt="KolaboraCampus">
+        <p class="footer-tagline">Kolaborasi cerdas untuk prestasi yang lebih besar.</p>
+      </div>
+      <p class="footer-sso">Terhubung melalui SSO Universitas Brawijaya</p>
+    </footer>
+  </div>
+
+  <!-- DIALOG BUAT TIM BARU -->
+  <div id="buat-tim-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="buat-tim-title">
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn modal-close-floating" data-close-modal aria-label="Tutup dialog">✕</button>
+      <div class="modal-icon-badge" aria-hidden="true">👥</div>
+      <h2 id="buat-tim-title" class="modal-title">Buat tim baru</h2>
+      <p class="modal-subtitle">Lengkapi identitas tim dan kebutuhan anggota. Tim akan langsung muncul di &ldquo;Tim Saya&rdquo;.</p>
+
+      <form id="buat-tim-form" class="modal-form">
+        <div class="form-field">
+          <label for="nama-tim" class="form-label">Nama tim</label>
+          <input id="nama-tim" name="nama_tim" type="text" required placeholder="Contoh: Tim Aurora" class="form-control">
+        </div>
+
+        <div class="form-field">
+          <label for="lomba-diikuti" class="form-label">Lomba yang diikuti</label>
+          <div class="select-wrapper">
+            <select id="lomba-diikuti" name="lomba" class="form-control form-select">
+              <option value="GEMASTIK XVII">GEMASTIK XVII</option>
+              <option value="L'Oréal Brandstorm">L'Oréal Brandstorm</option>
+              <option value="Kreasi UI/UX Nasional">Kreasi UI/UX Nasional</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <p class="form-label">Posisi yang dibutuhkan</p>
+          <div id="positions-list" class="positions-list">
+            <div class="position-row">
+              <input type="text" name="posisi_nama[]" required placeholder="Contoh: Backend Developer" aria-label="Nama posisi" class="form-control position-input-name">
+              <input type="number" name="posisi_jumlah[]" min="1" max="10" value="1" aria-label="Jumlah posisi" class="form-control position-input-qty">
+            </div>
+          </div>
+          <button type="button" id="btn-add-position" class="btn-add-position">+ Tambah posisi</button>
+        </div>
+
+        <hr class="modal-divider">
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" data-close-modal>Batal</button>
+          <button type="submit" class="btn btn-primary">+ Buat tim &amp; buka workspace</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Status Global -->
+  <div id="status-toast" class="status-toast" role="status" aria-live="polite" aria-atomic="true">
+    <div>
+      <p id="status-toast-title" class="status-toast-title"></p>
+      <p id="status-toast-message" class="status-toast-message"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
